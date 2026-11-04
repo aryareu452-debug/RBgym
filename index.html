@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganapati Gym | Ganapati Unisex A/C & Non A/C Multi Gym</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="RBgym.ico">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- Open Graph / WhatsApp Preview Tags -->
+    <meta property="og:title" content="Ganapati Gym | Ganapati Unisex A/C & Non A/C Multi Gym">
+    <meta property="og:description" content="Ganapati Unisex A/C & Non A/C Multi Gym. State-of-the-art equipment, professional guidance, and an environment built for results.">
+    <meta property="og:image" content="https://aryareu452-debug.github.io/RB-Gym/preview.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <style>
+        :root {
+            --primary: #e60000;
+            --primary-dark: #b30000;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #1da851;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --card-bg: #1e1e1e;
+            --text-light: #f4f4f4;
+            --text-gray: #aaa;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-container img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.9)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 60px 20px;
+        }
+
+        /* Hero Logo styling (Centered) */
+        .hero-logo {
+            margin-bottom: 20px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero-logo img {
+            max-height: 120px;
+            width: auto;
+            filter: drop-shadow(0 0 15px rgba(230,0,0,0.4));
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(230, 0, 0, 0.3);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-dark);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Sections General */
+        section {
+            padding: 90px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 span {
+            color: var(--primary);
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        /* Facilities Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 35px 25px;
+            border-radius: 8px;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--primary);
+        }
+
+        .card i {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .card ul li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card ul li i {
+            font-size: 0.8rem;
+            margin-bottom: 0;
+        }
+
+        /* Gallery / Images Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: var(--card-bg);
+            aspect-ratio: 4/3;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Pricing Section (Categorized Grid) */
+        .pricing-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .price-box {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+
+        .price-box.highlight {
+            border: 2px solid var(--primary);
+            background: linear-gradient(180deg, #1e1e1e 0%, #291212 100%);
+        }
+
+        .price-box-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-box-title .subtitle {
+            font-size: 0.75rem;
+            color: var(--primary);
+            background-color: rgba(230,0,0,0.15);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-name {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .price-value {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* Timings & Location Section */
+        .info-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .info-box {
+            padding: 40px;
+        }
+
+        .info-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-top: 5px;
+        }
+
+        .info-item h4 {
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .map-box {
+            background: #252525;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: var(--text-gray);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-card {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 8px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: #2a2a2a;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a.fb:hover { background-color: #1877F2; color: white; transform: translateY(-3px); }
+        .social-links a.insta:hover { background-color: #E4405F; color: white; transform: translateY(-3px); }
+        .social-links a.wa:hover { background-color: var(--whatsapp); color: white; transform: translateY(-3px); }
+
+        /* Floating WhatsApp Button */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .floating-wa:hover {
+            background-color: var(--whatsapp-dark);
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            padding: 30px 50px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            header {
+                padding: 15px 20px;
+            }
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--darker);
+                flex-direction: column;
+                align-items: center;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            nav.active {
+                max-height: 350px;
+                padding: 20px 0;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero-logo img {
+                max-height: 90px;
+            }
+            section {
+                padding: 60px 20px;
+            }
+            .info-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .info-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918910717197?text=Hi%20Ganapati%20Gym!%20I%20would%20like%20to%20know%20more%20about%20membership%20plans%20and%20latest%20offers." class="floating-wa" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-text">GANAPATI <span>GYM</span></div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About & Facilities</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#info">Timing & Location</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Centered Logo -->
+        <div class="hero-logo">
+            <img src="image_7be3e0.png" alt="Ganapati Gym Logo" onerror="this.style.display='none'">
+        </div>
+        <h1>Transform Your Body at <span>Ganapati Gym</span></h1>
+        <p>Ganapati Unisex A/C & Non A/C Multi Gym. State-of-the-art equipment, professional guidance, and an environment built for results.</p>
+        <div class="hero-buttons">
+            <a href="#pricing" class="btn">View Plans</a>
+            <a href="https://wa.me/918910717197?text=Hi%20Ganapati%20Gym!%20I%20am%20interested%20in%20joining." class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+        </div>
+    </section>
+
+    <!-- About & Facilities Section -->
+    <section id="about">
+        <div class="section-title">
+            <h2>World-Class <span>Facilities</span></h2>
+            <p>Everything you need to reach your peak physical shape</p>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <i class="fas fa-dumbbell"></i>
+                <h3>Advanced Equipment</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> State-of-the-art treadmills</li>
+                    <li><i class="fas fa-check"></i> Cross-trainers & ellipticals</li>
+                    <li><i class="fas fa-check"></i> Heavy-duty mechanical systems</li>
+                    <li><i class="fas fa-check"></i> Standard free weights</li>
+                </ul>
+            </div>
+            <div class="card">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Structured Classes</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Cardio Training Sessions</li>
+                    <li><i class="fas fa-check"></i> Strength & Muscle Building</li>
+                    <li><i class="fas fa-check"></i> Aerobics Classes</li>
+                    <li><i class="fas fa-check"></i> Yoga & Flexibility Work</li>
+                </ul>
+            </div>
+            <div class="card">
+                <i class="fas fa-swimming-pool"></i>
+                <h3>Premium Add-ons</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Steam Bath Facilities</li>
+                    <li><i class="fas fa-check"></i> Personal Training & Spa Options</li>
+                    <li><i class="fas fa-check"></i> Unisex A/C & Non A/C Floors</li>
+                    <li><i class="fas fa-check"></i> Digital / NFC / Card Payments</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="section-title">
+            <h2>Membership <span>Plans & Rates</span></h2>
+            <p>Transparent pricing tailored for every fitness goal</p>
+        </div>
+
+        <div class="pricing-categories">
+            
+            <!-- General Fees -->
+            <div class="price-box highlight">
+                <div class="price-box-title">
+                    General Fees
+                    <span class="subtitle">Admission: ₹1,000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">1 Month</span>
+                    <span class="price-value">₹1,000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">3 Months</span>
+                    <span class="price-value">₹2,800</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">6 Months</span>
+                    <span class="price-value">₹5,500</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">12 Months (Locker Free + 2 Steam Bath)</span>
+                    <span class="price-value">₹9,000</span>
+                </div>
+            </div>
+
+            <!-- Only Ladies -->
+            <div class="price-box">
+                <div class="price-box-title">
+                    Only Ladies <span class="subtitle">3 PM - 4 PM</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">Admission Fee</span>
+                    <span class="price-value">₹1,000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">1 Month</span>
+                    <span class="price-value">₹900</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">3 Months</span>
+                    <span class="price-value">₹2,500</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">6 Months</span>
+                    <span class="price-value">₹4,500</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">12 Months (Locker Free + 2 Steam Bath)</span>
+                    <span class="price-value">₹8,000</span>
+                </div>
+            </div>
+
+            <!-- Students -->
+            <div class="price-box">
+                <div class="price-box-title">
+                    Students <span class="subtitle">Below 18 / ID Required</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">Admission Fee</span>
+                    <span class="price-value">₹1,000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">1 Month</span>
+                    <span class="price-value">₹800</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">3 Months</span>
+                    <span class="price-value">₹2,200</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">6 Months</span>
+                    <span class="price-value">₹4,000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">12 Months (Locker Free + 2 Steam Bath)</span>
+                    <span class="price-value">₹7,000</span>
+                </div>
+            </div>
+
+            <!-- Happy Hour -->
+            <div class="price-box">
+                <div class="price-box-title">
+                    Happy Hour <span class="subtitle">12 PM - 3 PM</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">Admission Fee</span>
+                    <span class="price-value">₹1,000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">1 Month</span>
+                    <span class="price-value">₹900</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">3 Months</span>
+                    <span class="price-value">₹2,500</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">6 Months</span>
+                    <span class="price-value">₹4,500</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">12 Months (Locker Free + 2 Steam Bath)</span>
+                    <span class="price-value">₹8,000</span>
+                </div>
+            </div>
+
+            <!-- Couples -->
+            <div class="price-box">
+                <div class="price-box-title">
+                    Couples
+                    <span class="subtitle">Admission: ₹1,500</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">3 Months</span>
+                    <span class="price-value">₹5,300</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">6 Months</span>
+                    <span class="price-value">₹10,000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">12 Months (Locker Free + 4 Steam Bath)</span>
+                    <span class="price-value">₹16,000</span>
+                </div>
+            </div>
+
+            <!-- PT, Spa, Visitor & Lockers -->
+            <div class="price-box">
+                <div class="price-box-title">
+                    Add-ons & Services
+                </div>
+                <div class="price-row">
+                    <span class="price-name">Visitor Fee</span>
+                    <span class="price-value">₹100</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">Personal Training (PT)</span>
+                    <span class="price-value">₹2,000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">Premium Training</span>
+                    <span class="price-value">₹3,000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">Steam Bath (15 Min)</span>
+                    <span class="price-value">₹200</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">Massage (1 Hour) / Spa</span>
+                    <span class="price-value">₹400 / ₹1,500</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">Pedicure / Manicure</span>
+                    <span class="price-value">₹300 / ₹300</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-name">Daily Use Locker / Permanent (Monthly)</span>
+                    <span class="price-value">₹100 / ₹300</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 35px;">
+            <p style="color: var(--primary); font-weight: 700; margin-bottom: 15px;"><i class="fas fa-credit-card"></i> Bajaj Finserv EMI Financing Available!</p>
+            <a href="https://wa.me/918910717197?text=Hi!%20I%20want%20to%20inquire%20about%20membership%20plans." class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Inquire or Book Plan on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Images Gallery Section -->
+    <section id="images">
+        <div class="section-title">
+            <h2>Gym <span>Gallery</span></h2>
+            <p>Take a look at our gym setup and active workout sessions</p>
+        </div>
+        <div class="gallery-grid" id="gallery-container">
+            <!-- Dynamically populated from images folder -->
+        </div>
+    </section>
+
+    <!-- Timing & Location Section -->
+    <section id="info">
+        <div class="info-container">
+            <div class="info-box">
+                <h3>Working Hours & Location</h3>
+                <div class="info-item">
+                    <i class="far fa-clock"></i>
+                    <div>
+                        <h4>Batch Timings</h4>
+                        <p>6:00 AM – 7:30 AM | 7:30 AM – 9:00 AM</p>
+                        <p>9:00 AM – 10:30 AM | 10:30 AM – 12:00 PM</p>
+                        <p>12:00 PM – 1:30 PM (Happy Hour)</p>
+                        <p>1:30 PM – 3:00 PM (Happy Hour)</p>
+                        <p>3:00 PM – 4:00 PM (Only Ladies)</p>
+                        <p>4:00 PM – 5:30 PM | 5:30 PM – 7:00 PM</p>
+                        <p>7:00 PM – 8:30 PM | 8:30 PM – 10:00 PM</p>
+                        <p style="color: var(--primary); font-weight: 600; margin-top: 5px;">Strictly Closed on Sundays</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Address & Landmark</h4>
+                        <p>Tribeni - Shibpur Rd, near Shibpur, Tribeni, Jatrasudi, West Bengal 712503</p>
+                        <p style="color: var(--text-light); margin-top: 5px;"><strong>Landmark:</strong> Right at the Tribeni Shibpur Bus Stand area, Hooghly.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-box">
+                <div>
+                    <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <h4>Tribeni Shibpur Bus Stand Area</h4>
+                    <p style="margin-top: 10px;">Hooghly, West Bengal 712503</p>
+                    <a href="https://maps.google.com/?q=X9JX+V7M, Tribeni - Shibpur Rd, Shibpur, Tribeni, Jatrasudi, West Bengal 712503" target="_blank" class="btn" style="margin-top: 20px; font-size: 0.85rem; padding: 10px 20px;">Open in Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Social Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Get In <span>Touch</span></h2>
+            <p>Connect with us instantly on WhatsApp, phone, or social media!</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-card">
+                <h3>Contact Numbers</h3>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h4>Primary Contact</h4>
+                        <p><a href="tel:+918910717197" style="color: var(--primary); font-weight: 700; font-size: 1.1rem;">+91 89107 17197</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div>
+                        <h4>Secondary / Promo Contact</h4>
+                        <p><a href="tel:+918910171797" style="color: var(--text-light);">+91 89101 71797</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Address</h4>
+                        <p><a href="mailto:ganapatiunisexacmultigym@gmail.com">ganapatiunisexacmultigym@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-card" style="display: flex; flex-direction: column; justify-content: center;">
+                <h3>Connect With Us</h3>
+                <p style="color: var(--text-gray); margin-bottom: 25px;">Click any button below to start a WhatsApp chat, call us directly, or check out our social pages:</p>
+
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <a href="https://wa.me/918910717197?text=Hi%20Ganapati%20Gym!%20I%20have%20an%20inquiry." target="_blank" class="btn btn-whatsapp" style="justify-content: center;">
+                        <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> WhatsApp Us directly
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/p/Ganapati-Unisex-Ac-Multi-Gym-100090991781075/" target="_blank" class="fb" title="Facebook Page"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ganapatiunisexacmultigym/" target="_blank" class="insta" title="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/918910717197" target="_blank" class="wa" title="WhatsApp Chat"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ganapati Unisex A/C & Non A/C Multi Gym. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll active state highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Load Gallery Images dynamically from images folder
+        const galleryContainer = document.getElementById('gallery-container');
+        const maxImageCheck = 25; // Updated to check up to 25 images (gym1.jpg to gym25.jpg)
+
+        for (let i = 1; i <= maxImageCheck; i++) {
+            const img = new Image();
+            const imgPath = `images/gym${i}.jpg`;
+            
+            img.onload = function() {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.innerHTML = `<img src="${imgPath}" alt="Ganapati Gym Photo ${i}">`;
+                galleryContainer.appendChild(galleryItem);
+            };
+            img.src = imgPath;
+        }
+    </script>
+</body>
+</html>
